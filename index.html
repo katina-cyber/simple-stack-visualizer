@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Simple Stack Visualizer</h1>
+		<input type="text" id="text-input" value="default">
+		<button id="push-button">Push</button>
+		<button id="pop-button">Pop</button>
+		<p id="screen-stack-0">top of stack</p> 
+		<p> bottom of stack</p>
+	
+
+	<script>
+		var stack = [];
+		var currentCount = 0;
+		var newCount = 0; 
+		$(document).ready(function(){
+			$("#push-button").click(function(){
+				stack.push($("#text-input").val());
+				$("#text-input").val("");
+				newCount = currentCount + 1;
+				$("#screen-stack-0").after('<li id=it-' + newCount + '>' +  'Element Num: ' + newCount + " Element: "  + stack[stack.length-1] + '</li>');
+				currentCount = newCount;
+			});
+
+			$("#pop-button").click(function() {
+				console.log('pop clicked');
+				stack.pop();
+				console.log(stack);
+				$("#it-" + currentCount).remove();
+				currentCount = currentCount - 1;
+			});
+		});
+	</script>
+	
+	</body>
+</html>
