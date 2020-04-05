@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<title>Stack Burger Shack</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="https://unpkg.com/scrollreveal"></script>
+
 	</head>
-	<body>
-		<h1>Simple Stack Visualizer</h1>
-		<input type="text" id="text-input" value="default">
-		<button id="push-button">Push</button>
-		<button id="pop-button">Pop</button>
-		<p id="screen-stack-0">top of stack</p> 
-		<p> bottom of stack</p>
+	<body><div class="checker-banner"></div>
+		<div class="container h-100 d-flex justify-content-center">
+			<div class="mv-auto">
+				<h1>Stack Burger Shack</h1>
+				<p>Add some delicious values to your burger</p>
+				<input type="text" id="text-input" value="default">
+					<button id="push-button" type="button" class="btn btn-dark">Push</button>
+					<button id="pop-button" type="button" class="btn btn-dark">Pop</button>
+				<div class="align-middle" id="stack-holder">
+					<div class="stack-marker" id="screen-stack-0">Below me is the top of the stack!</div> 
+					<div class="stack-marker">Above me is the bottom of the stack!</div>
+				</div>
+			</div>
+		</div>
 	
 
-	<script>
-		var stack = [];
-		var currentCount = 0;
-		var newCount = 0; 
-		$(document).ready(function(){
-			$("#push-button").click(function(){
-				stack.push($("#text-input").val());
-				$("#text-input").val("");
-				newCount = currentCount + 1;
-				$("#screen-stack-0").after('<li id=it-' + newCount + '>' +  'Element Num: ' + newCount + " Element: "  + stack[stack.length-1] + '</li>');
-				currentCount = newCount;
-			});
-
-			$("#pop-button").click(function() {
-				console.log('pop clicked');
-				stack.pop();
-				console.log(stack);
-				$("#it-" + currentCount).remove();
-				currentCount = currentCount - 1;
-			});
-		});
-	</script>
-	
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
+		<script src="jquery-3.4.1.min.js"></script>
+		<script src="scripts.js"></script>
 	</body>
 </html>
