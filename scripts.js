@@ -44,5 +44,9 @@ $(document).ready(function(){
 	$(function () {
 		$("#esp").draggable();
 	});
+	
+	$(function () {
+		$("#eip").draggable();
+	});
 });
 
