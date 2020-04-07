@@ -35,5 +35,14 @@ $(document).ready(function(){
 		$("#it-" + currentCount).remove();
 		currentCount = currentCount - 1;
 	});
+
+	$(function () {
+		$("#ebp").draggable();
+	});
+
+
+	$(function () {
+		$("#esp").draggable();
+	});
 });
 
